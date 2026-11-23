@@ -1,125 +1,367 @@
-<DOCTYPE html>
-    <html>
-        <head>
-            <title>Canteen Food Ordering System</title>
-            <link rel="stylesheet" href="style.css">
-            </head>
-            <body>
-                <header>
-                    <h1>ONLINE CANTEEN</h1>
-                    <p>Order your favourite meal online</p>
-                    </header>
+   <DOCTYPE html>
+<html lang="e n">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Campus Bites | Our Menu</title>
+        <link rel="stylesheet" href="menucss/menu.css">
+        </head>
+    <body>
+        <header>
+            <div class="logo">Campus Bites</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </header>
 
-                    <nav>
-                        <a href="#menu">Food Menu</a>
-                        <a href="#cart">My Orders</a>
-                        </nav>
+        <section class="menu-heading">
+            <p>FRESHLY PREPARED FOR YOU</p>
+            <h1>Explore Our Menu</h1>
+            <p>Discover our delicious selection of meals, crafted with care and made from the finest ingredients.</p>
+        </section>
 
-                        <section id="menu">
-                            <h2>Available Meals</h2>
-                            
-                            <div class="food">
-                                <h3>Rice and Beans</h3>
-                                <p>Ksh 150</p>
-                                <button onclick="AddToCart('Rice and Beans', 150)">
-                                    Add to AddToCart
-                            
-                                </button>
-                                </div>
+        <main class="menu-container">
 
-<div class="food">
-                                <h3>Ugali and Matumbo</h3>
-                                <p>Ksh 100</p>
-                                <button onclick="AddToCart('Ugali and Matumbo', 120)">
-                                    Add to AddToCart
-                            
-                                </button>
-                                </div>
+            <div class="menu-tools">
+                <input type="text" id="searchInput" placeholder="Search for your favorite meals...">
 
+            </div>
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="Breakfast">Breakfast</button>
+                <button class="category-btn" data-category="Lunch">Lunch</button>
+                <button class="category-btn" data-category="Dinner">Dinner</button>
+                <button class="category-btn" data-category="Desserts">Desserts</button>
+                <button class="category-btn" data-category="Beverages">Beverages</button>
+            </div>
 
-<div class="food">
-                                <h3>Ugali and Beef</h3>
-                                <p>Ksh 120</p>
-                                <button onclick="AddToCart('Ugali and Beef', 120)">
-                                    Add to AddToCart
-                            
-                                </button>
-                                </div>
+            <div class="food-grid">
 
+                <div class="food-card" data-category="Breakfast">
+                    <img src="images/pancake.jpeg" alt="Pancakes">
+                    <h3>Pancakes</h3>
+                    <p>Fluffy pancakes served with syrup and fresh fruit.</p>
+                    <span class="price">Ksh 100</span>
+                    <button class="add-btn" data-id="1" data-name="Pancakes" data-price="100">Add to Cart</button>
 
-<div class="food">
-                                <h3>Chips</h3>
-                                <p>Ksh 100</p>
-                                <button onclick="AddToCart('Chips', 100)">
-                                    Add to AddToCart
-                            
-                                </button>
-                                </div>
-
-<div class="food">
-                                <h3>Beef Samosa</h3>
-                                <p>Ksh 25</p>
-                                <button onclick="AddToCart('Beef Samosa', 25)">
-                                    Add to AddToCart
-                            
-                                </button>
-                                </div>
-
-<div class="food">
-                                <h3>Chapati and Beef</h3>
-                                <p>Ksh 80</p>
-                                <button onclick="AddToCart('Chapati and Beef', 80)">
-                                    Add to AddToCart
-                            
-                                </button>
-                                </div>
-
-
-<div class="food">
-                                <h3>Chiken </h3>
-                                <p>Ksh 150</p>
-                                <button onclick="AddToCart('Chiken', 150)">
-                                    Add to AddToCart
-                            
-                                </button>
-                                </div>
-
-
-<div class="food">
-                                <h3>Soda</h3>
-                                <p>Ksh 50</p>
-                                <button onclick="AddToCart('Soda', 50)">
-                                    Add to AddToCart
-                            
-                                </button>
-                                </div>
-
-
-<div class="food">
-                                <h3>Yogurt</h3>
-                                <p>Ksh 70</p>
-                                <button onclick="AddToCart('Yogurt', 70)">
-                                    Add to AddToCart
-                            
-                                </button>
-                                </div>
-
-</section>
-
-<section id="cart">
-    <h2>My Shopping Cart</h2>
-    <ul id="cartitems"></ul>
-    <h3 id ="total">Total:Ksh 0</h3>
-    <button onclick="placeOrder()">Place Order</button>
-    </section>
-
-    <script src="script.js"></script>
-    </body>
-    </html>
+              </div> 
+            
 
 
 
+            <div class="food-card" data-category="Breakfast">
+                    <img src="images/beefsamosa.jpeg" alt="beefsamosa">
+                    <h3>beefsamosa</h3>
+                    <p>Delicious beef samosa filled with seasoned meat and spices.</p>
+                    <span class="price">Ksh50</span>
+                    <button class="add-btn" data-id="1" data-name="beefsamosa" data-price="50">Add to Cart</button>
+
+                </div> 
+            
+
+         
+
+            <div class="food-card" data-category="Breakfast"> 
+                    <img src="images/breadomelette.jpeg" alt="breadomelette">
+                    <h3>Bread Omelette</h3>
+                    <p>A delicious omelette made with fresh bread and seasonal vegetables.</p>
+                    <span class="price">Ksh80</span>
+                    <button class="add-btn" data-id="3" data-name="Bread Omelette" data-price="80">Add to Cart</button>
+
+               </div>
+            
+
+             
+
+            <div class="food-card" data-category="Breakfast"> 
+                    <img src="images/Cappuccino.jpeg" alt="cappuccino">
+                    <h3>Cappuccino</h3>
+                    <p>A rich and creamy cappuccino made with freshly ground coffee and steamed milk.</p>
+                    <span class="price">Ksh120</span>
+                    <button class="add-btn" data-id="4" data-name="Cappuccino" data-price="120">Add to Cart</button>
+
+                
+            </div>
+
+             
+
+                    <div class="food-card" data-category="Breakfast"> 
+                    <img src="images/cocoa.jpeg" alt="cocoa">
+                    <h3>Cocoa</h3>
+                    <p>A rich and creamy cocoa made with freshly ground coffee and steamed milk.</p>
+                    <span class="price">Ksh120</span>
+                    <button class="add-btn" data-id="4" data-name="Cocoa" data-price="120">Add to Cart</button>
+
+        
+            </div>
+
+                  
+<div class="food-card" data-category="Breakfast"> 
+                    <img src="images/coffee.jpeg" alt="coffee">
+                    <h3>Coffee</h3>
+                    <p>A rich and creamy coffee made with freshly ground coffee and steamed milk.</p>
+                    <span class="price">Ksh120</span>
+                    <button class="add-btn" data-id="4" data-name="Coffee" data-price="120">Add to Cart</button>
+
+                
+            </div>
+
+            
+
+            <div class="food-card" data-category="Breakfast"> 
+                    <img src="images/mahamri.jpeg" alt="mahamri">
+                    <h3>Mahamri</h3>
+                    <p>A delicious traditional pastry filled with sweetened cream and nuts.</p>
+                    <span class="price">Ksh50</span>
+                    <button class="add-btn" data-id="5" data-name="Mahamri" data-price="50">Add to Cart</button>
+
+                 
+            </div>
+
+             
+            <div class="food-card" data-category="Breakfast"> 
+                    <img src="images/milktea.jpeg" alt="milk tea">
+                    <h3>Milk Tea</h3>
+                    <p>A rich and creamy milk tea made with freshly ground coffee and steamed milk.</p>
+                    <span class="price">Ksh120</span>
+                    <button class="add-btn" data-id="4" data-name="Milk Tea" data-price="120">Add to Cart</button>
+
+                        
+            </div>
+
+            
+
+            <div class="food-card" data-category="Breakfast">
+                    <img src="images/muffins.jpeg" alt="muffins">
+                    <h3>Muffins</h3>
+                    <p>Delicious and moist muffins made with fresh ingredients.</p>
+                    <span class="price">Ksh30</span>
+                    <button class="add-btn" data-id="6" data-name="Muffins" data-price="30">Add to Cart</button>
+
+                
+            </div>
+
+ 
+
+            <div class="food-card" data-category="Breakfast">
+                    <img src="images/ngumu.jpeg" alt="ngumu">
+                    <h3>Ngumu</h3>
+                    <p>A delicious traditional pastry filled with sweetened ingredients.</p>
+                    <span class="price">Ksh10</span>
+                    <button class="add-btn" data-id="4" data-name="Ngumu" data-price="10">Add to Cart</button>
+
+                
+            </div>
 
 
 
+            <div class="food-card" data-category="Lunch"> 
+                    <img src="images/chapati.jpeg" alt="chapati">
+                    <h3>Chapati</h3>
+                    <p>Delicious and fluffy chapati made with fresh ingredients.</p>
+                    <span class="price">Ksh20</span>
+                    <button class="add-btn" data-id="7" data-name="Chapati" data-price="20">Add to Cart</button>
+
+                
+            </div>
+
+         
+
+            <div class="food-card" data-category="Lunch"> 
+                    <img src="images/frieschicken.jpeg" alt="fries with chicken">
+                    <h3>Fries with Chicken</h3>
+                    <p>Delicious fries served with crispy and flavorful chicken.</p>
+                    <span class="price">Ksh200</span>
+                    <button class="add-btn" data-id="9" data-name="Fries with Chicken" data-price="200">Add to Cart</button>
+
+                
+            </div>
+
+  
+
+            <div class="food-card" data-category="Lunch"> 
+                    <img src="images/friessausage.jpeg" alt="fries with sausage">
+                    <h3>Fries with Sausage</h3>
+                    <p>Delicious fries served with tasty and flavorful sausage.</p>
+                    <span class="price">Ksh150</span>
+                    <button class="add-btn" data-id="10" data-name="Fries with Sausage" data-price="150">Add to Cart</button>
+
+                
+            </div>
+
+          
+
+            <div class="food-card" data-category="Dinner"> 
+                    <img src="images/pilau.jpeg" alt="pilau">
+                    <h3>Pilau</h3>
+                    <p>Delicious Kenyan-style rice dish with tender meat and aromatic spices.</p>
+                    <span class="price">Ksh150</span>
+                    <button class="add-btn" data-id="11" data-name="Pilau" data-price="150">Add to Cart</button>
+
+                      
+            </div>
+
+            
+
+            <div class="food-card" data-category="Dinner"> 
+                    <img src="images/spagetti.jpeg" alt="spagetti">
+                    <h3>Spagetti</h3>
+                    <p>Delicious Italian-style pasta with savory sauce.</p>
+                    <span class="price">Ksh200</span>
+                    <button class="add-btn" data-id="12" data-name="Spagetti" data-price="200">Add to Cart</button>
+
+                      
+            </div>
+
+    
+
+            <div class="food-card" data-category="Dinner"> 
+                    <img src="images/ugalibeef.jpeg" alt="ugalibeef">
+                    <h3>Ugali with Beef</h3>
+                    <p>Delicious Ugali served with tender and flavorful beef.</p>
+                    <span class="price">Ksh150</span>
+                    <button class="add-btn" data-id="13" data-name="Ugali with Beef" data-price="150">Add to Cart</button>
+
+                      
+            </div>
+
+         
+
+            <div class="food-card" data-category="Dinner"> 
+                    <img src="images/ugaliomena.jpeg" alt="ugaliomena">
+                    <h3>Ugali with Omena</h3>
+                    <p>Delicious Ugali served with tender and flavorful omena.</p>
+                    <span class="price">Ksh150</span>
+                    <button class="add-btn" data-id="14" data-name="Ugali with Omena" data-price="150">Add to Cart</button>
+
+                      
+            </div>
+
+            
+
+            <div class="food-card" data-category="Desserts"> 
+                    <img src="images/salad.jpeg" alt="salad">
+                    <h3>Salad</h3>
+                    <p>Delicious Kenyan-style dessert with a rich and creamy texture.</p>
+                    <span class="price">Ksh100</span>
+                    <button class="add-btn" data-id="15" data-name="Salad" data-price="100">Add to Cart</button>
+
+                      
+            </div>
+
+             
+
+            <div class="food-card" data-category="Desserts"> 
+                    <img src="images/cake.jpeg" alt="cake">
+                    <h3>Cake</h3>
+                    <p>Delicious Kenyan-style cake with a rich and creamy texture.</p>
+                    <span class="price">Ksh100</span>
+                    <button class="add-btn" data-id="16" data-name="Cake" data-price="100">Add to Cart</button>
+
+                      
+            </div>
+
+            
+
+            <div class="food-card" data-category="Desserts"> 
+                    <img src="images/Smocha .jpeg" alt="Smocha">
+                    <h3>Smocha</h3>
+                    <p>Delicious Kenyan-style dessert with a rich taste.</p>
+                    <span class="price">Ksh70</span>
+                    <button class="add-btn" data-id="17" data-name="Smocha" data-price="70">Add to Cart</button>
+
+                
+            </div>
+
+             
+
+            <div class="food-card" data-category="Desserts"> 
+                    <img src="images/cookies.jpeg" alt="cookies">
+                    <h3>Cookies</h3>
+                    <p>Delicious Kenyan-style cookies with a rich taste.</p>
+                    <span class="price">Ksh20</span>
+                    <button class="add-btn" data-id="17" data-name="Cookies" data-price="20">Add to Cart</button>
+
+                      
+            </div>
+
+
+
+            <div class="food-card" data-category="Desserts"> 
+                    <img src="images/shawarma.jpeg" alt="shawarma">
+                    <h3>Shawarma</h3>
+                    <p>Delicious Kenyan-style dessert with a rich and creamy texture.</p>
+                    <span class="price">Ksh250</span>
+                    <button class="add-btn" data-id="18" data-name="Shawarma" data-price="250">Add to Cart</button>
+
+                      
+            </div>
+
+
+            <div class="food-card" data-category="Beverages"> 
+                    <img src="images/pineapplejuice.jpeg" alt="pineapple juice">
+                    <h3>Pineapple Juice</h3>
+                    <p>Delicious fresh pineapple juice with a rich and creamy texture.</p>
+                    <span class="price">Ksh100</span>
+                    <button class="add-btn" data-id="19" data-name="Pineapple Juice" data-price="100">Add to Cart</button>
+
+                      
+            </div>
+
+           
+            <div class="food-card" data-category="Beverages"> 
+                    <img src="images/passionjuice.jpeg " alt="passion juice">
+                    <h3>Passion Juice</h3>
+                    <p>Delicious fresh passion juice with a rich and creamy texture.</p>
+                    <span class="price">Ksh100</span>
+                    <button class="add-btn" data-id="20" data-name="Passion Juice" data-price="100">Add to Cart</button>
+
+                      
+            </div>
+
+             
+
+            <div class="food-card" data-category="Beverages"> 
+                    <img src="images/milkshake.jpeg" alt="milkshake">
+                    <h3>Milkshake</h3>
+                    <p>Delicious fresh milkshake with a rich and creamy texture.</p>
+                    <span class="price">Ksh100</span>
+                    <button class="add-btn" data-id="21" data-name="Milkshake" data-price="100">Add to Cart</button>
+
+                      
+            </div>
+
+          
+
+            <div class="food-card" data-category="Beverages"> 
+                    <img src="images/drinks.jpeg" alt="drinks">
+                    <h3>Drinks</h3>
+                    <p>Delicious fresh drinks rich in flavor.</p>
+                    <span class="price">Ksh100</span>
+                    <button class="add-btn" data-id="22" data-name="Drinks" data-price="100">Add to Cart</button>
+
+                      
+            </div>
+
+            <p id="noResultsMessage" style="display: none;">No food items found.</p>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Campus Bites. All Rights Reserved.</p>
+        </footer>
+
+        <script src="menujs/menu.js"></script>
+
+
+
+
+
+</body>
+
+
+</html>
+                                  
+             
 
